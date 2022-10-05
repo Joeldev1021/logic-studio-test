@@ -1,0 +1,31 @@
+{
+	"name": "logic-studio",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"dev": "nodemon src/app.js",
+		"docker:up": "docker-compose -p card_date up -d",
+		"docker:down": "docker-compose -p card_date down",
+		"docker:down-volumes": "docker-compose -p test down -v"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.0.3",
+		"express": "^4.18.1",
+		"mongoose": "^6.6.4"
+	},
+	"devDependencies": {
+		"cors": "^2.8.5",
+		"eslint": "^8.24.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-n": "^15.3.0",
+		"eslint-plugin-promise": "^6.0.1",
+		"morgan": "^1.10.0",
+		"nodemon": "^2.0.20"
+	}
+}
