@@ -5,8 +5,8 @@
 	"main": "app.js",
 	"scripts": {
 		"dev": "nodemon src/app.js",
-		"docker:up": "docker-compose -p card_date up -d",
-		"docker:down": "docker-compose -p card_date down",
+		"docker:up": "docker-compose -p car_date up -d",
+		"docker:down": "docker-compose -p car_date down",
 		"docker:down-volumes": "docker-compose -p test down -v"
 	},
 	"keywords": [],

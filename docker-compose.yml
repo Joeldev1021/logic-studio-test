@@ -9,7 +9,7 @@ services:
       MONGODB_REPLICA_SET_MODE: primary
       MONGODB_ROOT_PASSWORD: ${MONGODB_PASSWORD:-admin}
       MONGODB_REPLICA_SET_KEY: replicasetkey123
-      MONGODB_REPLICA_SET_NAME: cardDate
+      MONGODB_REPLICA_SET_NAME: carDate
     ports:
       - ${MONGODB_PORT:-27017}:27017
     volumes:
