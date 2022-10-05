@@ -1,5 +1,5 @@
 import "./App.css";
-import { Box } from "@chakra-ui/react";
+import { Box, Spinner } from "@chakra-ui/react";
 import TableComponent from "./components/Table";
 import Form from "./components/Form";
 import Header from "./components/Header";
@@ -11,6 +11,7 @@ function App() {
 	const [loading, setLoading] = useState(false);
 	const [dataFilter, setDataFilter] = useState([]);
 	const [search, setSearch] = useState("");
+	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		setLoading(true);
@@ -34,16 +35,26 @@ function App() {
 
 	return (
 		<>
-			<Header setSearch={setSearch} />
+			<Header setSearch={setSearch} setIsOpen={setIsOpen} />
 			<Box
 				display='flex'
 				flexDirection='column'
 				alignItems='center'
 				justifyContent='center'
 			>
-				<Form setData={setData} />
+				{isOpen && <Form setData={setData} />}
 
-				{loading ? "cargand..." : <TableComponent dataFilter={dataFilter} />}
+				{loading ? (
+					<Spinner
+						thickness='4px'
+						speed='0.65s'
+						emptyColor='gray.200'
+						color='blue.500'
+						size='xl'
+					/>
+				) : (
+					<TableComponent dataFilter={dataFilter} />
+				)}
 			</Box>
 		</>
 	);
